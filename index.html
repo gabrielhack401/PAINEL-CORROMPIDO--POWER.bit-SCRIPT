@@ -80,25 +80,11 @@
             font-weight: 600;
         }
 
-        .badge-red {
-            background: #ff6b35;
-            color: #fff;
-        }
-
-        .badge-green {
-            background: #00c853;
-            color: #fff;
-        }
-
-        .badge-gold {
-            background: #ffd700;
-            color: #1a1f35;
-        }
-
-        .badge-purple {
-            background: #7c3aed;
-            color: #fff;
-        }
+        .badge-red { background: #ff6b35; color: #fff; }
+        .badge-green { background: #00c853; color: #fff; }
+        .badge-gold { background: #ffd700; color: #1a1f35; }
+        .badge-purple { background: #7c3aed; color: #fff; }
+        .badge-pink { background: #e91e63; color: #fff; }
 
         /* CARDS */
         .card {
@@ -149,18 +135,9 @@
             word-break: break-all;
         }
 
-        .code-block::-webkit-scrollbar {
-            width: 8px;
-        }
-
-        .code-block::-webkit-scrollbar-track {
-            background: #0d0f1a;
-        }
-
-        .code-block::-webkit-scrollbar-thumb {
-            background: #2a2f4a;
-            border-radius: 4px;
-        }
+        .code-block::-webkit-scrollbar { width: 8px; }
+        .code-block::-webkit-scrollbar-track { background: #0d0f1a; }
+        .code-block::-webkit-scrollbar-thumb { background: #2a2f4a; border-radius: 4px; }
 
         .copy-btn {
             position: sticky;
@@ -183,23 +160,9 @@
         }
 
         /* GRID */
-        .grid-2 {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 20px;
-        }
-
-        .grid-3 {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 16px;
-        }
-
-        .grid-4 {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
-            gap: 14px;
-        }
+        .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+        .grid-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 16px; }
+        .grid-4 { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 14px; }
 
         /* ITEMS */
         .link-item {
@@ -217,26 +180,11 @@
             transform: translateY(-2px);
         }
 
-        .link-item .icon {
-            font-size: 2rem;
-            display: block;
-        }
+        .link-item .icon { font-size: 2rem; display: block; }
+        .link-item .name { font-weight: 600; font-size: 1rem; display: block; margin: 4px 0; }
+        .link-item .type { font-size: 0.75rem; color: #889; display: block; margin-bottom: 10px; }
 
-        .link-item .name {
-            font-weight: 600;
-            font-size: 1rem;
-            display: block;
-            margin: 4px 0;
-        }
-
-        .link-item .type {
-            font-size: 0.75rem;
-            color: #889;
-            display: block;
-            margin-bottom: 10px;
-        }
-
-        .link-item a, .link-item .btn {
+        .link-item a {
             display: inline-block;
             background: #ff6b35;
             color: #fff;
@@ -246,31 +194,11 @@
             font-size: 0.8rem;
             font-weight: 600;
             transition: background 0.2s;
-            border: none;
-            cursor: pointer;
         }
 
-        .link-item a:hover, .link-item .btn:hover {
-            background: #e85a2a;
-        }
+        .link-item a:hover { background: #e85a2a; }
 
-        .link-item .btn-green {
-            background: #00c853;
-        }
-
-        .link-item .btn-green:hover {
-            background: #00a844;
-        }
-
-        .link-item .btn-purple {
-            background: #7c3aed;
-        }
-
-        .link-item .btn-purple:hover {
-            background: #6d2de8;
-        }
-
-        /* FEATURES LIST */
+        /* FEATURES */
         .features-list {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
@@ -286,9 +214,7 @@
             color: #aab;
         }
 
-        .features-list .feature::before {
-            content: "✅ ";
-        }
+        .features-list .feature::before { content: "✅ "; }
 
         /* REPOSITORY */
         .repo-box {
@@ -355,6 +281,19 @@
             margin: 0 8px;
         }
 
+        /* ALERTA SEGURANÇA */
+        .security-alert {
+            background: rgba(220, 53, 69, 0.15);
+            border: 1px solid #dc3545;
+            border-radius: 10px;
+            padding: 12px 16px;
+            margin: 10px 0;
+            font-size: 0.85rem;
+            color: #ff6b6b;
+        }
+
+        .security-alert strong { color: #ff6b6b; }
+
         /* FOOTER */
         .footer {
             text-align: center;
@@ -365,41 +304,21 @@
             font-size: 0.85rem;
         }
 
-        .footer a {
-            color: #ff6b35;
-            text-decoration: none;
-        }
+        .footer a { color: #ff6b35; text-decoration: none; }
 
         /* RESPONSIVE */
         @media (max-width: 768px) {
-            .header h1 {
-                font-size: 2.2rem;
-            }
-            .grid-2 {
-                grid-template-columns: 1fr;
-            }
-            .grid-3 {
-                grid-template-columns: 1fr 1fr;
-            }
-            .grid-4 {
-                grid-template-columns: 1fr 1fr;
-            }
-            .repo-box .repo-url {
-                font-size: 0.7rem;
-                padding: 8px 12px;
-            }
+            .header h1 { font-size: 2.2rem; }
+            .grid-2 { grid-template-columns: 1fr; }
+            .grid-3 { grid-template-columns: 1fr 1fr; }
+            .grid-4 { grid-template-columns: 1fr 1fr; }
+            .repo-box .repo-url { font-size: 0.7rem; padding: 8px 12px; }
         }
 
         @media (max-width: 480px) {
-            .header h1 {
-                font-size: 1.6rem;
-            }
-            .grid-3 {
-                grid-template-columns: 1fr;
-            }
-            .grid-4 {
-                grid-template-columns: 1fr 1fr;
-            }
+            .header h1 { font-size: 1.6rem; }
+            .grid-3 { grid-template-columns: 1fr; }
+            .grid-4 { grid-template-columns: 1fr 1fr; }
         }
     </style>
 </head>
@@ -416,12 +335,19 @@
             <span class="badge badge-gold">👑 RedzHub Style</span>
             <span class="badge badge-green">✅ Atualizado 2026</span>
             <span class="badge badge-purple">🚀 Ultra Power</span>
+            <span class="badge badge-pink">🔒 100% Seguro</span>
         </div>
     </div>
 
     <!-- ANTI-BAN BANNER -->
     <div class="antiban-banner">
         🛡️ ANTI-BAN ATIVADO - NÍVEL <span>MÁXIMO</span> - NÃO PODE SER DESLIGADO
+    </div>
+
+    <!-- ALERTA DE SEGURANÇA -->
+    <div class="security-alert">
+        <strong>⚠️ ATENÇÃO:</strong> Nunca baixe executores de repositórios suspeitos no GitHub. 
+        <strong>SEMPRE</strong> use os links oficiais abaixo. Links falsos contêm <strong>MALWARE</strong>!
     </div>
 
     <!-- SCRIPT -->
@@ -432,8 +358,19 @@
         </p>
         <div class="code-block">
             <button class="copy-btn" onclick="copyScript()">📋 Copiar</button>
-            <pre id="scriptCode">-- Carregar script do repositório
-loadstring(game:HttpGet("https://raw.githubusercontent.com/gabrielhack401/Blox-debug-hack-script-POWER/main/script.lua"))()</pre>
+            <pre id="scriptCode">-- =============================================
+-- BLOX FRUITS SCRIPT - POWER ULTRA
+-- ANTI-BAN OBRIGATÓRIO - NÍVEL MÁXIMO
+-- REPOSITÓRIO: https://github.com/gabrielhack401/Blox-debug-hack-script-POWER
+-- =============================================
+
+print("🔥 Carregando POWER ULTRA Script...")
+print("🛡️ Anti-Ban será ativado automaticamente!")
+
+-- Script principal com todas as funções
+loadstring(game:HttpGet("https://raw.githubusercontent.com/gabrielhack401/Blox-debug-hack-script-POWER/main/script-full.lua"))()
+
+print("✅ Script POWER ULTRA carregado com sucesso!")</pre>
         </div>
         <p style="color: #889; margin-top: 10px; font-size: 0.85rem;">
             💡 Ou use o comando direto: <code style="background:#0d0f1a;padding:2px 8px;border-radius:4px;">loadstring(game:HttpGet("https://raw.githubusercontent.com/gabrielhack401/Blox-debug-hack-script-POWER/main/script.lua"))()</code>
@@ -507,52 +444,105 @@ loadstring(game:HttpGet("https://raw.githubusercontent.com/gabrielhack401/Blox-d
         </div>
     </div>
 
-    <!-- EXECUTORES -->
+    <!-- EXECUTORES - LINKS OFICIAIS -->
     <div class="card">
-        <h2><span class="icon">🚀</span> Executores Compatíveis</h2>
+        <h2><span class="icon">🚀</span> Executores Oficiais</h2>
+        <p style="color: #aab; margin-bottom: 14px; font-size: 0.85rem;">
+            ⚠️ <strong>SEMPRE</strong> baixe do site oficial. Links falsos contêm malware!
+        </p>
         <div class="grid-3">
-            <div class="link-item">
-                <span class="icon">⚡</span>
-                <span class="name">Synapse X</span>
-                <span class="type">💰 Pago • Mais estável</span>
-                <a href="https://x.synapse.to/" target="_blank">Baixar</a>
-            </div>
+            <!-- Krnl - OFICIAL -->
             <div class="link-item">
                 <span class="icon">🔓</span>
                 <span class="name">Krnl</span>
-                <span class="type">🆓 Gratuito • Muito usado</span>
+                <span class="type">🆓 Gratuito • krnl.rocks</span>
                 <a href="https://krnl.rocks/" target="_blank">Baixar</a>
             </div>
-            <div class="link-item">
-                <span class="icon">🛠️</span>
-                <span class="name">ScriptWare</span>
-                <span class="type">💰 Pago • Ótimo desempenho</span>
-                <a href="https://script-ware.com/" target="_blank">Baixar</a>
-            </div>
+            <!-- Fluxus - OFICIAL -->
             <div class="link-item">
                 <span class="icon">🌀</span>
                 <span class="name">Fluxus</span>
-                <span class="type">🆓 Gratuito • Executa bem</span>
+                <span class="type">🆓 Gratuito • fluxus.to</span>
                 <a href="https://fluxus.to/" target="_blank">Baixar</a>
             </div>
+            <!-- Solara - OFICIAL -->
+            <div class="link-item">
+                <span class="icon">☀️</span>
+                <span class="name">Solara</span>
+                <span class="type">🆓 Gratuito • solara-executor.com</span>
+                <a href="https://solara-executor.com/" target="_blank">Baixar</a>
+            </div>
+            <!-- Xeno - OFICIAL -->
+            <div class="link-item">
+                <span class="icon">🔱</span>
+                <span class="name">Xeno</span>
+                <span class="type">🆓 Gratuito • xeno-executor.com</span>
+                <a href="https://xeno-executor.com/" target="_blank">Baixar</a>
+            </div>
+            <!-- JJSploit - OFICIAL -->
+            <div class="link-item">
+                <span class="icon">⚡</span>
+                <span class="name">JJSploit</span>
+                <span class="type">🆓 Gratuito • jjjsploit.com</span>
+                <a href="https://jjjsploit.com/" target="_blank">Baixar</a>
+            </div>
+            <!-- Oxygen U - OFICIAL -->
+            <div class="link-item">
+                <span class="icon">💨</span>
+                <span class="name">Oxygen U</span>
+                <span class="type">🆓 Gratuito • oxygen-u.com</span>
+                <a href="https://oxygen-u.com/" target="_blank">Baixar</a>
+            </div>
+            <!-- Valyse - OFICIAL -->
             <div class="link-item">
                 <span class="icon">💎</span>
                 <span class="name">Valyse</span>
-                <span class="type">🆓 Gratuito • Leve</span>
+                <span class="type">🆓 Gratuito • valyse.net</span>
                 <a href="https://valyse.net/" target="_blank">Baixar</a>
             </div>
+            <!-- Evon - OFICIAL -->
             <div class="link-item">
                 <span class="icon">🔥</span>
                 <span class="name">Evon</span>
-                <span class="type">🆓 Gratuito • Popular</span>
+                <span class="type">🆓 Gratuito • evon.to</span>
                 <a href="https://evon.to/" target="_blank">Baixar</a>
             </div>
+            <!-- Synapse X - OFICIAL -->
+            <div class="link-item">
+                <span class="icon">⚡</span>
+                <span class="name">Synapse X</span>
+                <span class="type">💰 Pago • x.synapse.to</span>
+                <a href="https://x.synapse.to/" target="_blank">Baixar</a>
+            </div>
+            <!-- Script-Ware - OFICIAL -->
+            <div class="link-item">
+                <span class="icon">🛠️</span>
+                <span class="name">Script-Ware</span>
+                <span class="type">💰 Pago • script-ware.com</span>
+                <a href="https://script-ware.com/" target="_blank">Baixar</a>
+            </div>
+            <!-- AWP - OFICIAL -->
+            <div class="link-item">
+                <span class="icon">🎯</span>
+                <span class="name">AWP</span>
+                <span class="type">💰 Pago • awp.gg</span>
+                <a href="https://awp.gg/" target="_blank">Baixar</a>
+            </div>
+        </div>
+        <div style="margin-top:12px;padding:12px;background:rgba(255,193,7,0.1);border-radius:8px;border:1px solid #ffd700;">
+            <p style="color:#ffd700;font-size:0.85rem;text-align:center;">
+                ⚠️ <strong>NUNCA</strong> baixe executores de repositórios do GitHub. 
+                Use apenas os links oficiais acima!
+            </p>
         </div>
     </div>
 
     <!-- EMULADORES -->
     <div class="card">
         <h2><span class="icon">📱</span> Emuladores para Celular</h2>
+        <p style="color: #aab; margin-bottom: 14px; font-size: 0.85rem;">
+            Rode o script no celular usando um emulador de Android.
+        </p>
         <div class="grid-4">
             <div class="link-item">
                 <span class="icon">🟣</span>
@@ -578,6 +568,18 @@ loadstring(game:HttpGet("https://raw.githubusercontent.com/gabrielhack401/Blox-d
                 <span class="type">Estável e confiável</span>
                 <a href="https://www.bignox.com/" target="_blank">Baixar</a>
             </div>
+            <div class="link-item">
+                <span class="icon">🟡</span>
+                <span class="name">MuMu Player</span>
+                <span class="type">Rápido e otimizado</span>
+                <a href="https://www.mumuglobal.com/" target="_blank">Baixar</a>
+            </div>
+            <div class="link-item">
+                <span class="icon">🔴</span>
+                <span class="name">GameLoop</span>
+                <span class="type">Oficial da Tencent</span>
+                <a href="https://www.gameloop.com/" target="_blank">Baixar</a>
+            </div>
         </div>
     </div>
 
@@ -593,7 +595,7 @@ loadstring(game:HttpGet("https://raw.githubusercontent.com/gabrielhack401/Blox-d
             <div style="background:rgba(255,255,255,0.03);padding:16px;border-radius:10px;text-align:center;">
                 <div style="font-size:2rem;">2️⃣</div>
                 <p style="font-weight:600;">Abra o Executor</p>
-                <p style="color:#889;font-size:0.85rem;">Synapse X, Krnl, Fluxus, etc.</p>
+                <p style="color:#889;font-size:0.85rem;">Use os links oficiais para baixar</p>
             </div>
             <div style="background:rgba(255,255,255,0.03);padding:16px;border-radius:10px;text-align:center;">
                 <div style="font-size:2rem;">3️⃣</div>
@@ -630,7 +632,6 @@ loadstring(game:HttpGet("https://raw.githubusercontent.com/gabrielhack401/Blox-d
             btn.textContent = '✅ Copiado!';
             setTimeout(() => { btn.textContent = '📋 Copiar'; }, 2000);
         }).catch(() => {
-            // Fallback
             const textarea = document.createElement('textarea');
             textarea.value = code;
             document.body.appendChild(textarea);
