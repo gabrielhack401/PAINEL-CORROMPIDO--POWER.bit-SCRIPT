@@ -1,0 +1,648 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>🔥 Blox Fruits Script - POWER ULTRA</title>
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Blox Fruits Script - POWER ULTRA" />
+    <meta property="og:description" content="Script poderoso com Anti-Ban obrigatório e todas as funções do RedzHub" />
+    <meta property="og:url" content="https://seu-site.onrender.com" />
+    <meta property="og:type" content="website" />
+
+    <!-- Favicon -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🔥</text></svg>" />
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background: linear-gradient(135deg, #0b0e1a 0%, #1a1f35 100%);
+            color: #eee;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        /* HEADER */
+        .header {
+            text-align: center;
+            padding: 40px 20px 30px;
+            border-bottom: 2px solid #ff6b35;
+            margin-bottom: 30px;
+            position: relative;
+        }
+
+        .header h1 {
+            font-size: 3.5rem;
+            background: linear-gradient(90deg, #ff6b35, #ffb347, #ff6b35);
+            background-size: 200% auto;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: shimmer 3s linear infinite;
+            text-shadow: 0 0 40px rgba(255, 107, 53, 0.3);
+        }
+
+        @keyframes shimmer {
+            0% { background-position: 0% center; }
+            100% { background-position: 200% center; }
+        }
+
+        .header .subtitle {
+            color: #aab;
+            font-size: 1.2rem;
+            margin-top: 8px;
+        }
+
+        .badge-container {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            flex-wrap: wrap;
+            margin-top: 12px;
+        }
+
+        .badge {
+            display: inline-block;
+            padding: 4px 16px;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 600;
+        }
+
+        .badge-red {
+            background: #ff6b35;
+            color: #fff;
+        }
+
+        .badge-green {
+            background: #00c853;
+            color: #fff;
+        }
+
+        .badge-gold {
+            background: #ffd700;
+            color: #1a1f35;
+        }
+
+        .badge-purple {
+            background: #7c3aed;
+            color: #fff;
+        }
+
+        /* CARDS */
+        .card {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 16px;
+            padding: 24px;
+            margin-bottom: 24px;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4);
+        }
+
+        .card h2 {
+            font-size: 1.5rem;
+            margin-bottom: 16px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .card h2 .icon {
+            font-size: 1.8rem;
+        }
+
+        /* SCRIPT CODE */
+        .code-block {
+            background: #0d0f1a;
+            border-radius: 12px;
+            padding: 16px;
+            overflow-x: auto;
+            border: 1px solid #2a2f4a;
+            position: relative;
+            max-height: 500px;
+            overflow-y: auto;
+        }
+
+        .code-block pre {
+            font-family: 'Fira Code', 'Consolas', monospace;
+            font-size: 0.8rem;
+            line-height: 1.6;
+            color: #cdd6f4;
+            white-space: pre-wrap;
+            word-break: break-all;
+        }
+
+        .code-block::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        .code-block::-webkit-scrollbar-track {
+            background: #0d0f1a;
+        }
+
+        .code-block::-webkit-scrollbar-thumb {
+            background: #2a2f4a;
+            border-radius: 4px;
+        }
+
+        .copy-btn {
+            position: sticky;
+            top: 0;
+            float: right;
+            background: #2a2f4a;
+            border: none;
+            color: #aab;
+            padding: 6px 16px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 0.75rem;
+            transition: background 0.2s;
+            z-index: 10;
+        }
+
+        .copy-btn:hover {
+            background: #ff6b35;
+            color: #fff;
+        }
+
+        /* GRID */
+        .grid-2 {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        .grid-3 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 16px;
+        }
+
+        .grid-4 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+            gap: 14px;
+        }
+
+        /* ITEMS */
+        .link-item {
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            border-radius: 10px;
+            padding: 16px;
+            text-align: center;
+            transition: all 0.2s;
+        }
+
+        .link-item:hover {
+            background: rgba(255, 255, 255, 0.08);
+            border-color: #ff6b35;
+            transform: translateY(-2px);
+        }
+
+        .link-item .icon {
+            font-size: 2rem;
+            display: block;
+        }
+
+        .link-item .name {
+            font-weight: 600;
+            font-size: 1rem;
+            display: block;
+            margin: 4px 0;
+        }
+
+        .link-item .type {
+            font-size: 0.75rem;
+            color: #889;
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        .link-item a, .link-item .btn {
+            display: inline-block;
+            background: #ff6b35;
+            color: #fff;
+            padding: 6px 20px;
+            border-radius: 20px;
+            text-decoration: none;
+            font-size: 0.8rem;
+            font-weight: 600;
+            transition: background 0.2s;
+            border: none;
+            cursor: pointer;
+        }
+
+        .link-item a:hover, .link-item .btn:hover {
+            background: #e85a2a;
+        }
+
+        .link-item .btn-green {
+            background: #00c853;
+        }
+
+        .link-item .btn-green:hover {
+            background: #00a844;
+        }
+
+        .link-item .btn-purple {
+            background: #7c3aed;
+        }
+
+        .link-item .btn-purple:hover {
+            background: #6d2de8;
+        }
+
+        /* FEATURES LIST */
+        .features-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 8px;
+            margin-top: 10px;
+        }
+
+        .features-list .feature {
+            background: rgba(255, 255, 255, 0.03);
+            padding: 6px 12px;
+            border-radius: 6px;
+            font-size: 0.85rem;
+            color: #aab;
+        }
+
+        .features-list .feature::before {
+            content: "✅ ";
+        }
+
+        /* REPOSITORY */
+        .repo-box {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            border-radius: 10px;
+            padding: 20px;
+            text-align: center;
+            margin-top: 10px;
+        }
+
+        .repo-box .repo-url {
+            font-family: 'Fira Code', monospace;
+            background: #0d0f1a;
+            padding: 12px 20px;
+            border-radius: 8px;
+            display: inline-block;
+            color: #ffb347;
+            font-size: 0.9rem;
+            margin: 10px 0;
+            word-break: break-all;
+        }
+
+        .repo-box .btn {
+            display: inline-block;
+            background: #24292e;
+            color: #fff;
+            padding: 10px 30px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            border: 1px solid #ff6b35;
+            transition: all 0.2s;
+        }
+
+        .repo-box .btn:hover {
+            background: #ff6b35;
+            border-color: #ff6b35;
+            transform: scale(1.05);
+        }
+
+        /* ANTI-BAN BANNER */
+        .antiban-banner {
+            background: linear-gradient(90deg, #ff6b35, #dc3545);
+            border-radius: 12px;
+            padding: 16px 24px;
+            text-align: center;
+            font-weight: 700;
+            font-size: 1.1rem;
+            margin-bottom: 20px;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.8; }
+        }
+
+        .antiban-banner span {
+            background: #fff;
+            color: #dc3545;
+            padding: 2px 12px;
+            border-radius: 4px;
+            margin: 0 8px;
+        }
+
+        /* FOOTER */
+        .footer {
+            text-align: center;
+            padding: 30px 20px 10px;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            margin-top: 30px;
+            color: #556;
+            font-size: 0.85rem;
+        }
+
+        .footer a {
+            color: #ff6b35;
+            text-decoration: none;
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 2.2rem;
+            }
+            .grid-2 {
+                grid-template-columns: 1fr;
+            }
+            .grid-3 {
+                grid-template-columns: 1fr 1fr;
+            }
+            .grid-4 {
+                grid-template-columns: 1fr 1fr;
+            }
+            .repo-box .repo-url {
+                font-size: 0.7rem;
+                padding: 8px 12px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .header h1 {
+                font-size: 1.6rem;
+            }
+            .grid-3 {
+                grid-template-columns: 1fr;
+            }
+            .grid-4 {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+
+    <!-- HEADER -->
+    <div class="header">
+        <h1>🔥 BLOX FRUITS POWER</h1>
+        <p class="subtitle">⚡ O script mais poderoso para Blox Fruits</p>
+        <div class="badge-container">
+            <span class="badge badge-red">🛡️ Anti-Ban Obrigatório</span>
+            <span class="badge badge-gold">👑 RedzHub Style</span>
+            <span class="badge badge-green">✅ Atualizado 2026</span>
+            <span class="badge badge-purple">🚀 Ultra Power</span>
+        </div>
+    </div>
+
+    <!-- ANTI-BAN BANNER -->
+    <div class="antiban-banner">
+        🛡️ ANTI-BAN ATIVADO - NÍVEL <span>MÁXIMO</span> - NÃO PODE SER DESLIGADO
+    </div>
+
+    <!-- SCRIPT -->
+    <div class="card">
+        <h2><span class="icon">📜</span> Script Completo</h2>
+        <p style="color: #aab; margin-bottom: 14px; font-size: 0.95rem;">
+            Copie o código e cole no seu executor. O Anti-Ban será ativado automaticamente.
+        </p>
+        <div class="code-block">
+            <button class="copy-btn" onclick="copyScript()">📋 Copiar</button>
+            <pre id="scriptCode">-- Carregar script do repositório
+loadstring(game:HttpGet("https://raw.githubusercontent.com/gabrielhack401/Blox-debug-hack-script-POWER/main/script.lua"))()</pre>
+        </div>
+        <p style="color: #889; margin-top: 10px; font-size: 0.85rem;">
+            💡 Ou use o comando direto: <code style="background:#0d0f1a;padding:2px 8px;border-radius:4px;">loadstring(game:HttpGet("https://raw.githubusercontent.com/gabrielhack401/Blox-debug-hack-script-POWER/main/script.lua"))()</code>
+        </p>
+    </div>
+
+    <!-- REPOSITÓRIO -->
+    <div class="card">
+        <h2><span class="icon">📂</span> Repositório Oficial</h2>
+        <div class="repo-box">
+            <p style="color: #aab; margin-bottom: 10px;">📦 Acesse o repositório no GitHub:</p>
+            <div class="repo-url">https://github.com/gabrielhack401/Blox-debug-hack-script-POWER</div>
+            <div style="margin-top: 16px; display: flex; gap: 12px; justify-content: center; flex-wrap: wrap;">
+                <a href="https://github.com/gabrielhack401/Blox-debug-hack-script-POWER" target="_blank" class="btn">📦 Ver no GitHub</a>
+                <a href="https://github.com/gabrielhack401/Blox-debug-hack-script-POWER/archive/refs/heads/main.zip" target="_blank" class="btn" style="background:#00c853;border-color:#00c853;">⬇️ Baixar ZIP</a>
+            </div>
+            <p style="color: #889; margin-top: 12px; font-size: 0.85rem;">
+                ⭐ Deixe uma estrela no repositório para ajudar o projeto!
+            </p>
+        </div>
+    </div>
+
+    <!-- FUNÇÕES PRINCIPAIS -->
+    <div class="card">
+        <h2><span class="icon">⚡</span> Funcionalidades</h2>
+        <div class="grid-2">
+            <div>
+                <h3 style="color:#ff6b35;font-size:1rem;margin-bottom:8px;">🛡️ Segurança</h3>
+                <div class="features-list">
+                    <span class="feature">Anti-Ban Obrigatório</span>
+                    <span class="feature">Proteção de Teleporte</span>
+                    <span class="feature">Proteção de Velocidade</span>
+                    <span class="feature">Proteção de Fly</span>
+                    <span class="feature">Bloco de Logs</span>
+                    <span class="feature">GodMode Protection</span>
+                </div>
+            </div>
+            <div>
+                <h3 style="color:#ff6b35;font-size:1rem;margin-bottom:8px;">⚔️ Combate</h3>
+                <div class="features-list">
+                    <span class="feature">Auto Farm (Nível)</span>
+                    <span class="feature">Auto Farm Boss</span>
+                    <span class="feature">Auto Kill Aura</span>
+                    <span class="feature">Auto PvP</span>
+                    <span class="feature">Auto Combo</span>
+                    <span class="feature">One Hit Kill</span>
+                </div>
+            </div>
+            <div>
+                <h3 style="color:#ff6b35;font-size:1rem;margin-bottom:8px;">💀 Imortalidade</h3>
+                <div class="features-list">
+                    <span class="feature">God Mode</span>
+                    <span class="feature">Demi God</span>
+                    <span class="feature">Vida Infinita</span>
+                    <span class="feature">Stamina Infinita</span>
+                    <span class="feature">No Cooldown</span>
+                    <span class="feature">No Stun</span>
+                </div>
+            </div>
+            <div>
+                <h3 style="color:#ff6b35;font-size:1rem;margin-bottom:8px;">🌍 Mundo</h3>
+                <div class="features-list">
+                    <span class="feature">Auto Teleport</span>
+                    <span class="feature">Auto Collect</span>
+                    <span class="feature">Auto Sea Beast</span>
+                    <span class="feature">Auto Rebirth</span>
+                    <span class="feature">ESP Players/Fruits</span>
+                    <span class="feature">Fly Mode / Noclip</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- EXECUTORES -->
+    <div class="card">
+        <h2><span class="icon">🚀</span> Executores Compatíveis</h2>
+        <div class="grid-3">
+            <div class="link-item">
+                <span class="icon">⚡</span>
+                <span class="name">Synapse X</span>
+                <span class="type">💰 Pago • Mais estável</span>
+                <a href="https://x.synapse.to/" target="_blank">Baixar</a>
+            </div>
+            <div class="link-item">
+                <span class="icon">🔓</span>
+                <span class="name">Krnl</span>
+                <span class="type">🆓 Gratuito • Muito usado</span>
+                <a href="https://krnl.rocks/" target="_blank">Baixar</a>
+            </div>
+            <div class="link-item">
+                <span class="icon">🛠️</span>
+                <span class="name">ScriptWare</span>
+                <span class="type">💰 Pago • Ótimo desempenho</span>
+                <a href="https://script-ware.com/" target="_blank">Baixar</a>
+            </div>
+            <div class="link-item">
+                <span class="icon">🌀</span>
+                <span class="name">Fluxus</span>
+                <span class="type">🆓 Gratuito • Executa bem</span>
+                <a href="https://fluxus.to/" target="_blank">Baixar</a>
+            </div>
+            <div class="link-item">
+                <span class="icon">💎</span>
+                <span class="name">Valyse</span>
+                <span class="type">🆓 Gratuito • Leve</span>
+                <a href="https://valyse.net/" target="_blank">Baixar</a>
+            </div>
+            <div class="link-item">
+                <span class="icon">🔥</span>
+                <span class="name">Evon</span>
+                <span class="type">🆓 Gratuito • Popular</span>
+                <a href="https://evon.to/" target="_blank">Baixar</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- EMULADORES -->
+    <div class="card">
+        <h2><span class="icon">📱</span> Emuladores para Celular</h2>
+        <div class="grid-4">
+            <div class="link-item">
+                <span class="icon">🟣</span>
+                <span class="name">BlueStacks</span>
+                <span class="type">O mais popular</span>
+                <a href="https://www.bluestacks.com/" target="_blank">Baixar</a>
+            </div>
+            <div class="link-item">
+                <span class="icon">🟠</span>
+                <span class="name">LDPlayer</span>
+                <span class="type">Leve e rápido</span>
+                <a href="https://www.ldplayer.net/" target="_blank">Baixar</a>
+            </div>
+            <div class="link-item">
+                <span class="icon">🟢</span>
+                <span class="name">MEmu</span>
+                <span class="type">Multi-instâncias</span>
+                <a href="https://www.memuplay.com/" target="_blank">Baixar</a>
+            </div>
+            <div class="link-item">
+                <span class="icon">🔵</span>
+                <span class="name">NoxPlayer</span>
+                <span class="type">Estável e confiável</span>
+                <a href="https://www.bignox.com/" target="_blank">Baixar</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- COMO USAR -->
+    <div class="card">
+        <h2><span class="icon">📖</span> Como Usar</h2>
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px;">
+            <div style="background:rgba(255,255,255,0.03);padding:16px;border-radius:10px;text-align:center;">
+                <div style="font-size:2rem;">1️⃣</div>
+                <p style="font-weight:600;">Copie o Script</p>
+                <p style="color:#889;font-size:0.85rem;">Clique em "Copiar" no código acima</p>
+            </div>
+            <div style="background:rgba(255,255,255,0.03);padding:16px;border-radius:10px;text-align:center;">
+                <div style="font-size:2rem;">2️⃣</div>
+                <p style="font-weight:600;">Abra o Executor</p>
+                <p style="color:#889;font-size:0.85rem;">Synapse X, Krnl, Fluxus, etc.</p>
+            </div>
+            <div style="background:rgba(255,255,255,0.03);padding:16px;border-radius:10px;text-align:center;">
+                <div style="font-size:2rem;">3️⃣</div>
+                <p style="font-weight:600;">Cole e Execute</p>
+                <p style="color:#889;font-size:0.85rem;">O Anti-Ban ativa automaticamente</p>
+            </div>
+            <div style="background:rgba(255,255,255,0.03);padding:16px;border-radius:10px;text-align:center;">
+                <div style="font-size:2rem;">4️⃣</div>
+                <p style="font-weight:600;">Ative as Funções</p>
+                <p style="color:#889;font-size:0.85rem;">Use o menu para ativar o que desejar</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- FOOTER -->
+    <div class="footer">
+        <p>
+            ⚠️ Este material é apenas para fins educacionais. Use por sua conta e risco.
+            <br>
+            🔗 <a href="https://github.com/gabrielhack401/Blox-debug-hack-script-POWER" target="_blank">Repositório Oficial</a>
+        </p>
+        <p style="margin-top:6px;color:#334;">
+            Desenvolvido por <a href="https://github.com/gabrielhack401" style="color:#ff6b35;">GabrielHack401</a> • 2026
+        </p>
+    </div>
+
+</div>
+
+<script>
+    function copyScript() {
+        const code = document.getElementById('scriptCode').innerText;
+        navigator.clipboard.writeText(code).then(() => {
+            const btn = document.querySelector('.copy-btn');
+            btn.textContent = '✅ Copiado!';
+            setTimeout(() => { btn.textContent = '📋 Copiar'; }, 2000);
+        }).catch(() => {
+            // Fallback
+            const textarea = document.createElement('textarea');
+            textarea.value = code;
+            document.body.appendChild(textarea);
+            textarea.select();
+            document.execCommand('copy');
+            document.body.removeChild(textarea);
+            const btn = document.querySelector('.copy-btn');
+            btn.textContent = '✅ Copiado!';
+            setTimeout(() => { btn.textContent = '📋 Copiar'; }, 2000);
+        });
+    }
+</script>
+
+</body>
+</html>
